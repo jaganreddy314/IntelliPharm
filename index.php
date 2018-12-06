@@ -53,6 +53,7 @@ and open the template in the editor.
     ?>
     <body>
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		<?php if(isset($teamMembers)) { ?>
 		<div class="container">
 			<h3 align="center">Members List</h3><br />
 			<div class="table-responsive">
@@ -98,10 +99,11 @@ and open the template in the editor.
 					echo "<a href='index.php?page=".$totalPages."'>Last</a>";
 				}
 			?>
-    </div>
-    <br /><br />
-   </div>
-  </div>
+				</div>
+				<br /><br />
+			   </div>
+			</div>
+		<?php } ?>
         <script>
 			window.onload = function () {
 				var data = '<?php echo json_encode($membersSignUpByYear); ?>';
